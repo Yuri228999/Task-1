@@ -7,6 +7,7 @@ public class SubTask5 {
 		 Scanner in = new Scanner(System.in);
 		 System.out.print("Введите число:");
 		 int n = in.nextInt();
+		 System.out.print("Все простые числа до введенного: ");
 		 int count = 0;
 		 for(int i = 1; i <= n ; i++) {
 			 count = 0;
