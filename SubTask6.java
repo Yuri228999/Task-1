@@ -2,6 +2,7 @@ package ua.com.sourceit.Hello;
 import java.util.Scanner;
 public class SubTask6 {
 	public static void main(String[] args) {
+		System.out.println("Введите буквенный номер");
 		Scanner in = new Scanner(System.in);
 		String letters = in.nextLine();
 		methodFirst(letters);
@@ -9,14 +10,14 @@ public class SubTask6 {
 		methodThird();
 	}
 	
-	public static int methodFirst(String letter) {
+	public static void methodFirst(String letter) {
 			int firstResultNumber = 0;
 				int firstNumber = 0;
 				
 				switch(letter.length()) {
 					case 1:
 					firstResultNumber = letter.charAt(0) - 64;
-					System.out.println(firstResultNumber);
+					System.out.println("Числовой номер" + " " + firstResultNumber);
 					break;
 					case 2:
 					for(int i = 1; i <= letter.charAt(0) - 64; i++) {
@@ -24,13 +25,14 @@ public class SubTask6 {
 						firstNumber = 26 * i;
 					}
 						firstResultNumber = firstNumber + letter.charAt(1) - 64;
-					System.out.println(firstResultNumber);
+					System.out.println("Числовой номер" + " " + firstResultNumber);
 					break;
 					}
-			return firstResultNumber;
+			
 		}
 	
 	public static void methodSecond() {
+		System.out.println("Введите числовой номер");
 			Scanner in = new Scanner(System.in);
 			int firstNumber = in.nextInt();
 			int secondNumber = 0;
@@ -50,17 +52,35 @@ public class SubTask6 {
 				 }else {
 					 char firstLetter = (char)(fourNumber + 64);
 					 char secondLetter = (char)(thirdNumber + 64);
-					 System.out.print(firstLetter +""+ secondLetter);
+					 System.out.println("Буквенное значение" + " " + firstLetter +""+ secondLetter);
 				 }
 			}			
 		}
 	
 	public static void methodThird() {
+		System.out.println("Введите буквенный номер");
 		Scanner in = new Scanner(System.in);
 		String letters = in.nextLine();
-		int result = methodFirst(letters) + 1;
-		System.out.println(result);
+		int firstResultNumber = 0;
+		int firstNumber = 0;
+		int res = 0;
 		
+		switch(letters.length()) {
+			case 1:
+			firstResultNumber = letters.charAt(0) - 64;
+			res = firstResultNumber + 1;
+			System.out.println("Номер столбца справа" + " " + res);
+			break;
+			case 2:
+			for(int i = 1; i <= letters.charAt(0) - 64; i++) {
+				firstNumber = 0;
+				firstNumber = 26 * i;
+			}
+				firstResultNumber = firstNumber + letters.charAt(1) - 64;
+				res = firstResultNumber + 1;
+			System.out.println("Номер столбца справа" + " " + res);
+			break;
+			}
 	}
 }
 
